@@ -1,0 +1,147 @@
+﻿@model WitnessBook.GUI.Models.EventModel
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_index.cshtml";
+}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<!-- Wrap -->
+<div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+
+            <!-- Logo -->
+            <div class="logo float-left">
+                <a href="@Url.Content("~/Views/Shared/")_index.cshtml" title=""><img src="@Url.Content("~/Content/")images/logo-header.png" alt=""></a>
+            </div>
+            <!-- End Logo -->
+            <!-- Bars -->
+            <div class="bars" id="bars"></div>
+            <!-- End Bars -->
+            <!--Navigation-->
+            <nav class="navigation nav-c" id="navigation" data-menu-type="1200">
+                <div class="nav-inner">
+                    <a href="#" class="bars-close" id="bars-close">Close</a>
+                    <div class="tb">
+                        <div class="tb-cell">
+                            <ul class="menu-list text-uppercase">
+                                <li>
+                                    <a href="@Url.Content("~/Home/Index/")" title="">Home</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Content("~/WitnessCard/Manage/")" title="">Witness Card</a>
+
+                                </li>
+
+                                <li class="current-menu-parent">
+                                    <a href="@Url.Content("~/Events/Index")" title="">Events</a>
+
+                                </li>
+
+
+                                <li>
+                                    <a href="@Url.Content("~/Home/About")" title="">About</a>
+
+                                </li>
+                                <li>
+                                    <a href="@Url.Content("~/Home/Contact")" title="">Contact</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="#" title="">Profile</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--End Navigation-->
+        </div>
+    </header>
+    <!-- End Header -->
+</div>
+<!--Banner-->
+<section class="banner">
+
+    <!--Background-->
+    <div class="bg-parallax bg-1"></div>
+    <!--End Background-->
+
+    <div class="container">
+
+        <div class="logo-banner text-center">
+            <a href="" title="">
+                <img src="@Url.Content("~/Content/")images/logo-banner.png" alt="">
+            </a>
+        </div>
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>EventModel</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.nameEvent)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.nameEvent)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.dateDebutEvent)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dateDebutEvent)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.dateFinEvent)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dateFinEvent)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TypeEvent)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TypeEvent)
+                </dd>
+
+            </dl>
+            
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+
+            }
+            </div>
+        </div>
+        </section>
+        
